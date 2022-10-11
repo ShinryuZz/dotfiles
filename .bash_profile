@@ -16,3 +16,6 @@ unset __conda_setup
 
 
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+export PATH="$HOME/.nodenv/bin:$PATH"
