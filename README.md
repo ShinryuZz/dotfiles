@@ -8,4 +8,4 @@
 
 
 ## setup path
-source ~/dotfiles/setup.sh
+`source ~/dotfiles/setup.sh`
