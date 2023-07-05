@@ -51,3 +51,7 @@ fi
 export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
+
+export PATH="/Users/shinryuzz/.deta/bin:$PATH"
+
+export PATH="/Users/shinryuzz/.detaspace/bin:$PATH"
