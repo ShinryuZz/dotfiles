@@ -4,7 +4,10 @@
 set -eu
 
 # dotfilesディレクトリの場所を、変数DOTFILES_DIRに教える
-DOTFILES_DIR=$(cd $(dirname $0); pwd)
+DOTFILES_DIR=$(
+	cd $(dirname $0)
+	pwd
+)
 # dotfilesディレクトリに移動する
 cd $DOTFILES_DIR
 

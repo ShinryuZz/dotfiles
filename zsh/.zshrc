@@ -137,5 +137,3 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # brew
 export PATH="/opt/homebrew/bin:/usr/local/bin:/bin:/usr/bin:$PATH"
 
-# bin
-# export PATH="/usr/local/bin:/bin:/usr/bin:$PATH"
