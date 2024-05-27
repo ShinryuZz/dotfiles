@@ -84,6 +84,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,6 +115,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tf="terraform"
+
+# autojamp
+[[ -s /Users/shinryuzz/.autojump/etc/profile.d/autojump.sh ]] && source /Users/shinryuzz/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
