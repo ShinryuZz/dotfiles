@@ -87,16 +87,26 @@ plugins=(
   autojump
 )
 
+# autojamp
+[[ -s /Users/shinryuzz/.autojump/etc/profile.d/autojump.sh ]] && source /Users/shinryuzz/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 source $ZSH/oh-my-zsh.sh
-
-
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=ja_JP.UTF-8
+
+# Term
+export TERM=screen-256color
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -112,22 +122,17 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias zshconfig="mate ~/.zshrc"
 
-## -i interactive option for safe execution
+
+# Interactive option for safe execution
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
+# alias
 alias vim="nvim"
 alias tf="terraform"
 
-# autojamp
-[[ -s /Users/shinryuzz/.autojump/etc/profile.d/autojump.sh ]] && source /Users/shinryuzz/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
 
 
 # >>> conda initialize >>>
