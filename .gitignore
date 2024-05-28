@@ -1,0 +1,17 @@
+# ignore all
+/*
+/.**
+
+
+# white list
+!README.md
+!.gitignore
+
+!alacritty/
+!hammerspoon/
+!nvim/
+!tmux/
+!zsh
+
+!setup.sh
+
