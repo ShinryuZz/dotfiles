@@ -15,6 +15,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_RUNTIME_DIR="/run/user/$UID"
 
 ### zsh ###
+export ZSH="$XDG_DATA_HOME"/oh-my-zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 ### Go ###

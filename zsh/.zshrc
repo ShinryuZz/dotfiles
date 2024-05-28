@@ -1,3 +1,21 @@
+### paths ###
+typeset -gU PATH path
+
+path=(
+  '/opt/homebrew/bin'(N-/)
+  '/usr/local/bin'(N-/)
+  '/bin'(N-/)
+  '/usr/bin'(N-/)
+)
+
+path=(
+  "$HOME/.local/bin"(N-/)
+  "$CARGO_HOME/bin"(N-/)
+  "$GOPATH/bin"(N-/)
+  "$path[@]"
+)
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -8,18 +26,15 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,14 +112,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-export LANG=ja_JP.UTF-8
-
-# Term
-export TERM=screen-256color
-
 # History
-HISTFILE=~/.zsh_history
+HISTFILE="$XDG_STATE_HOME/zsh_history"
 HISTSIZE=1000000
 SAVEHIST=1000000
 
@@ -134,7 +143,6 @@ alias vim="nvim"
 alias tf="terraform"
 
 
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/shinryuzz/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
@@ -158,16 +166,6 @@ if [ -e "$HOME/.nodenv" ]; then
   fi
 fi
 
-# Path
-## cargo (rust)
-source $HOME/.cargo/env
 
-## go
-export PATH=$PATH:$GOPATH:bin
 
-## poetry
-export PATH="$HOME/.poetry/bin:$PATH"
-
-# brew
-export PATH="/opt/homebrew/bin:/usr/local/bin:/bin:/usr/bin:$PATH"
 
