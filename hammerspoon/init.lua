@@ -22,3 +22,16 @@ myKeys = {
 }
 
 spoon.ShiftIt:bindHotkeys(myKeys)
+
+switcher = hs.window.switcher.new()
+
+hs.hotkey.bind(mash, "f", "", function()
+	switcher:next()
+end)
+hs.hotkey.bind(mash, "b", "", function()
+	switcher:previous()
+end)
+
+-- local hotswitchHs = require("hotswitch-hs/hotswitch-hs")
+-- hotswitchHs.enableAutoUpdate() -- If you don't want to update automatically, remove this line.
+-- hs.hotkey.bind({ "command" }, ".", hotswitchHs.openOrClose) -- Set a keybind you like to open HotSwitch-HS panel.
