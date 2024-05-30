@@ -1,25 +1,33 @@
-#!/bin/sh
+#!/bin/bash
 
-# エラーや未定義の変数に備える
-set -eu
+# create symbolic links to the config files
 
-# dotfilesディレクトリの場所を、変数DOTFILES_DIRに教える
-DOTFILES_DIR=$(
-	cd $(dirname $0)
+set -e
+
+CUR_DIR=$(
+	cd $(dirname $0) || exit 1
 	pwd
 )
-# dotfilesディレクトリに移動する
-cd $DOTFILES_DIR
+cd $CUR_DIR
 
-# .から始まるファイルやフォルダに対して繰り返す
-for f in .??*; do
-	# シンボリックリンクを作りたくないファイルやフォルダを除外
-	[[ "$f" == ".git" ]] && continue
-	[[ "$f" == ".gitconfig" ]] && continue
-	[[ "$f" == ".gitignore" ]] && continue
-	[[ "$f" == ".DS_Store" ]] && continue
-	[[ "$f" =~ .swp$ ]] && continue
+CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
-	# シンボリックリンクを作成
-	ln -snfv ${DOTFILES_DIR}/$f ~
+declare -a DIRS=(
+	"zsh"
+	"alacritty"
+	"nvim"
+	"tmux"
+)
+
+for dir in "${DIRS[@]}"; do
+	dst_dir=$CONFIG_HOME/$dir
+	if [ -e $dst_dir ]; then
+		echo "$dst_dir already exists, skipping..."
+	else
+		ln -sf $CUR_DIR/$dir $dst_dir
+	fi
 done
+
+ln -sf $CUR_DIR/hammerspoon ~/.hammerspoon
+
+echo "### Setup completed! ###"
