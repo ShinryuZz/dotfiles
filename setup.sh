@@ -2,7 +2,7 @@
 
 # create symbolic links to the config files
 
-set -e
+set -eu
 
 CUR_DIR=$(
 	cd $(dirname $0) || exit 1
