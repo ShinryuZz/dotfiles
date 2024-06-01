@@ -1,0 +1,14 @@
+name: init script test
+
+on: [push]
+
+jobs:
+  init-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: init
+        run: make init

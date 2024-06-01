@@ -7,6 +7,7 @@
 # white list
 !README.md
 !.gitignore
+!.github/
 
 !alacritty/
 !hammerspoon/
@@ -15,4 +16,6 @@
 !zsh
 
 !setup.sh
+!Makefile
+
 
