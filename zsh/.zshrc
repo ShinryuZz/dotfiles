@@ -138,9 +138,9 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
-# alias
 alias vim="nvim"
 alias tf="terraform"
+alias gcc="gcc-14"
 
 
 # >>> conda initialize >>>
