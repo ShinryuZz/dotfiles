@@ -142,6 +142,8 @@ alias vim="nvim"
 alias tf="terraform"
 alias gcc="gcc-14"
 
+alias cc="gcc-14"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # >>> conda initialize >>>
