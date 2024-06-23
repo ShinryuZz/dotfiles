@@ -28,6 +28,11 @@ for dir in "${DIRS[@]}"; do
 	fi
 done
 
-ln -sf $CUR_DIR/hammerspoon ~/.hammerspoon
+HS_PATH=${CUR_DIR}/hammerspoon
+if [ -e $HS_PATH ]; then
+	echo "$HS_PATH already exists, skipping..."
+else
+	ln -sf $CUR_DIR/hammerspoon ~/.hammerspoon
+fi
 
 echo "### Setup completed! ###"
