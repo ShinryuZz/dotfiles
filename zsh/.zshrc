@@ -144,6 +144,10 @@ alias gcc="gcc-14"
 
 alias cc="gcc-14"
 
+alias lz="lazygit"
+
+alias dc="docker compose"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # >>> conda initialize >>>
