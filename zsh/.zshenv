@@ -23,3 +23,7 @@ export RUST_BACKTRACE=1
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
+### Volta ###
+export VOLTA_HOME="$HOME/.volta"
+export VOLTA_NODE_VERSION=21
+
